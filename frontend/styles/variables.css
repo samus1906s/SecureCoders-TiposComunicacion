@@ -1,0 +1,50 @@
+:root {
+
+     --color-primario:#0d6efd;
+
+    --color-secundario:#6c757d;
+
+    --color-exito:#198754;
+
+    --color-peligro:#dc3545;
+
+    --color-advertencia:#ffc107;
+
+    --color-informacion:#0dcaf0;
+
+    --color-claro:#f8f9fa;
+
+    --color-oscuro:#212529;
+
+    --color-blanco:#ffffff;
+
+    --color-gris:#dee2e6;
+
+    /* Fuente de la página */
+
+    --fuente-principal: 
+    "UI",Tahoma,Verdana,sans-serif;
+
+    /*Bordes de que se van a utlizar y luego las sombras*/
+
+    --radio:8px;
+
+    --sombra:0 2px 8px rgba(0,0,0,.10);
+
+   
+
+    /* Espacios que se pueden tener "Los pueden modificar si gustan" */
+
+    
+    --espacio-xs:4px;
+
+    --espacio-sm:8px;
+
+    --espacio-md:16px;
+
+    --espacio-lg:24px;
+
+    --espacio-xl:32px;
+
+}
+
