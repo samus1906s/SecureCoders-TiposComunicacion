@@ -1,24 +1,30 @@
-export default function Navbar(){
+import { NavLink } from "react-router-dom";
 
-    return(
+export default function Navbar() {
+
+    return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 
             <div className="container">
 
-                <a
+                <NavLink
                     className="navbar-brand"
-                    href="/"
+                    to="/"
                 >
 
                     SmartNotify Solutions
 
-                </a>
+                </NavLink>
 
                 <button
                     className="navbar-toggler"
+                    type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Mostrar menú"
                 >
 
                     <span className="navbar-toggler-icon"></span>
@@ -34,27 +40,40 @@ export default function Navbar(){
 
                         <li className="nav-item">
 
-                            <a
+                            <NavLink
                                 className="nav-link"
-                                href="/"
+                                to="/"
                             >
 
                                 Dashboard
 
-                            </a>
+                            </NavLink>
 
                         </li>
 
                         <li className="nav-item">
 
-                            <a
+                            <NavLink
                                 className="nav-link"
-                                href="/chat"
+                                to="/notificaciones"
+                            >
+
+                                Notificaciones
+
+                            </NavLink>
+
+                        </li>
+
+                        <li className="nav-item">
+
+                            <NavLink
+                                className="nav-link"
+                                to="/chat"
                             >
 
                                 Chat
 
-                            </a>
+                            </NavLink>
 
                         </li>
 
