@@ -1,4 +1,3 @@
-import "../styles/modal.css";
 import Button from "./button";
 
 export default function Modal({

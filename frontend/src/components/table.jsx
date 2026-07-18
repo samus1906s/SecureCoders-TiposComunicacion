@@ -1,4 +1,3 @@
-import "../styles/table.css";
 import Badge from "./badge";
 
 export default function Table({

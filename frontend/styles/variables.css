@@ -1,50 +1,63 @@
 :root {
 
-     --color-primario:#0d6efd;
+    /* ==========================
+       COLORES
+    ========================== */
 
-    --color-secundario:#6c757d;
+    --color-primario: #0d6efd;
+    --color-secundario: #6c757d;
+    --color-exito: #198754;
+    --color-peligro: #dc3545;
+    --color-advertencia: #ffc107;
+    --color-informacion: #0dcaf0;
 
-    --color-exito:#198754;
+    --color-blanco: #ffffff;
+    --color-claro: #f8f9fa;
+    --color-gris: #dee2e6;
+    --color-gris-claro: #f1f3f5;
+    --color-oscuro: #212529;
 
-    --color-peligro:#dc3545;
+    /* ==========================
+       TIPOGRAFÍA
+    ========================== */
 
-    --color-advertencia:#ffc107;
+    --fuente-principal: "Segoe UI", Tahoma, Verdana, sans-serif;
 
-    --color-informacion:#0dcaf0;
+    --texto-sm: .85rem;
+    --texto-md: 1rem;
+    --texto-lg: 1.25rem;
+    --texto-xl: 1.6rem;
 
-    --color-claro:#f8f9fa;
+    /* ==========================
+       BORDES
+    ========================== */
 
-    --color-oscuro:#212529;
+    --radio-sm: 5px;
+    --radio-md: 8px;
+    --radio-lg: 12px;
 
-    --color-blanco:#ffffff;
+    /* ==========================
+       SOMBRAS
+    ========================== */
 
-    --color-gris:#dee2e6;
+    --sombra-sm: 0 2px 6px rgba(0,0,0,.08);
+    --sombra-md: 0 4px 10px rgba(0,0,0,.12);
+    --sombra-lg: 0 8px 20px rgba(0,0,0,.15);
 
-    /* Fuente de la página */
+    /* ==========================
+       ESPACIADOS
+    ========================== */
 
-    --fuente-principal: 
-    "UI",Tahoma,Verdana,sans-serif;
+    --espacio-xs: 5px;
+    --espacio-sm: 10px;
+    --espacio-md: 15px;
+    --espacio-lg: 20px;
+    --espacio-xl: 30px;
 
-    /*Bordes de que se van a utlizar y luego las sombras*/
+    /* ==========================
+       TRANSICIONES
+    ========================== */
 
-    --radio:8px;
-
-    --sombra:0 2px 8px rgba(0,0,0,.10);
-
-   
-
-    /* Espacios que se pueden tener "Los pueden modificar si gustan" */
-
-    
-    --espacio-xs:4px;
-
-    --espacio-sm:8px;
-
-    --espacio-md:16px;
-
-    --espacio-lg:24px;
-
-    --espacio-xl:32px;
+    --transicion: .3s ease;
 
 }
-

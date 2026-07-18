@@ -1,65 +1,72 @@
 @import "./variables.css";
+@import "./components.css";
+@import "./layout.css";
+@import "./pages.css";
+
+/* ==========================
+   RESET
+========================== */
 
 *{
-    margin: 0;
 
-    padding: 0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
-    box-sizing: border-box;
 }
 
-body {
-    font-family: var(--fuente-principal);
+html{
 
-    background-color: var(--color-claro);
+    scroll-behavior:smooth;
 
-    color: var(--color-oscuro);
 }
 
-a {
-    text-decoration: none;
+body{
+
+    font-family:var(--fuente-principal);
+    background:var(--color-claro);
+    color:var(--color-oscuro);
+
 }
 
-img{
-    max-width: 100%;
+a{
 
-    display: block;
+    text-decoration:none;
+    color:inherit;
+
 }
 
 ul{
-    list-style: none;
 
-    padding: 0%;
+    list-style:none;
+    padding:0;
+    margin:0;
 
-    margin: 0%;
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
 }
 
 button{
-    cursor: pointer;
+
+    cursor:pointer;
+
 }
 
-main {
-    padding: 20px;
+input,
+select,
+textarea{
+
+    outline:none;
+
 }
 
-.card{
-    border: none;
+main{
 
-    border-radius: var(--radio);
+    padding:25px;
 
-    box-shadow: var(--sombra);
-}
-
-.table{
-    background-color: var(--color-claro);
-}
-
-.form-control,
-
-.form-select{
-    border-radius: var(--radio);
-}
-
-.textarea{
-    resize: none;
 }

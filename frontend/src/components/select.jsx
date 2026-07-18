@@ -1,5 +1,3 @@
-import "../styles/select.css";
-
 export default function Select({
     etiqueta,
     nombre,

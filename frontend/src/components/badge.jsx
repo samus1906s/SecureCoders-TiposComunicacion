@@ -1,5 +1,3 @@
-import "../styles/badge.css";
-
 export default function Badge({
 
     estado

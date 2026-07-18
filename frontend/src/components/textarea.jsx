@@ -1,5 +1,3 @@
-import "../styles/textarea.css";
-
 export default function Textarea({
     etiqueta,
     nombre,

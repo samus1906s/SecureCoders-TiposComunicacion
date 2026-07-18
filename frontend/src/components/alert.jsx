@@ -1,5 +1,3 @@
-import "../styles/alert.css";
-
 export default function Alert ({
     tipo = "success",
     mensaje 

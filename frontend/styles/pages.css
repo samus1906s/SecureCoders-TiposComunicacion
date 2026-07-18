@@ -1,0 +1,171 @@
+/* =======================================================
+                    DASHBOARD
+======================================================= */
+
+.dashboard{
+
+    width:100%;
+
+}
+
+/* =======================================================
+                    NUEVA SOLICITUD
+======================================================= */
+
+.nueva-solicitud{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+/* =======================================================
+                    DETALLE SOLICITUD
+======================================================= */
+
+.detalle-solicitud{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+/* =======================================================
+                    PANEL DE NOTIFICACIONES
+======================================================= */
+
+.panel-notificaciones{
+
+    width:100%;
+
+}
+
+.panel-titulo{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+    padding-bottom:12px;
+
+    border-bottom:1px solid var(--color-gris);
+
+}
+
+.notificacion{
+
+    padding:15px;
+    border-bottom:1px solid var(--color-gris);
+
+}
+
+.notificacion:last-child{
+
+    border-bottom:none;
+
+}
+
+/* =======================================================
+                    CHAT
+======================================================= */
+
+.chat{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+/* =======================================================
+                    FORMULARIOS
+======================================================= */
+
+.formulario{
+
+    background:var(--color-blanco);
+    padding:25px;
+    border-radius:var(--radio-lg);
+    box-shadow:var(--sombra-sm);
+
+}
+
+/* =======================================================
+                    CONTENEDOR GENERAL
+======================================================= */
+
+.contenedor{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+
+/* =======================================================
+                    NOTIFICACIONES
+======================================================= */
+
+.panel-notificaciones{
+
+    width:100%;
+
+}
+
+.panel-titulo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid var(--color-gris);
+
+}
+
+.notificacion{
+
+    padding:16px;
+
+    border-bottom:1px solid var(--color-gris);
+
+    transition:var(--transicion);
+
+}
+
+.notificacion:hover{
+
+    background:var(--color-gris-claro);
+
+}
+
+.notificacion:last-child{
+
+    border-bottom:none;
+
+}
+
+.notificacion strong{
+
+    font-size:var(--texto-md);
+
+}
+
+.notificacion p{
+
+    margin-top:8px;
+
+    margin-bottom:5px;
+
+}
+
+.notificacion small{
+
+    color:var(--color-secundario);
+
+}
