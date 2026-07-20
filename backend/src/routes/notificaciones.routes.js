@@ -1,7 +1,8 @@
 import { Router } from "express";
-import { obtenerLongPolling } from "../controllers/longPolling.controller.js";
 
-import { conectarSSE } from "../controllers/sse.controller.js";
+import {obtenerLongPolling} from "../controllers/longPolling.controller.js";
+
+import {conectarSSE} from "../controllers/sse.controller.js";
 
 const router = Router();
 

@@ -1,34 +1,54 @@
 export default function Card({
 
     titulo,
-
     valor,
-
     icono,
+    color = "primary",
+    children
 
-    color = "primary"
+}) {
 
-}){
-
-    return(
+    return (
 
         <div className="card shadow-sm">
 
-            <div className="card-body text-center">
+            <div
+                className={
+                    children
+                        ? "card-body"
+                        : "card-body text-center"
+                }
+            >
 
-                <i className={`bi ${icono} text-${color} fs-1`}></i>
+                {
+                    children ? (
 
-                <h6 className="mt-3">
+                        children
 
-                    {titulo}
+                    ) : (
 
-                </h6>
+                        <>
 
-                <h3>
+                            <i
+                                className={`bi ${icono} text-${color} fs-1`}
+                            ></i>
 
-                    {valor}
+                            <h6 className="mt-3">
 
-                </h3>
+                                {titulo}
+
+                            </h6>
+
+                            <h3>
+
+                                {valor}
+
+                            </h3>
+
+                        </>
+
+                    )
+                }
 
             </div>
 

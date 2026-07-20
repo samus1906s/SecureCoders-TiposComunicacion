@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Modal as BsModal } from "bootstrap";
+
 import Table from "../components/table";
 import Button from "../components/button";
 import Modal from "../components/modal";
@@ -10,8 +11,8 @@ import Loading from "../components/loading";
 import {
   obtenerSolicitudes,
   eliminarSolicitud,
-  actualizarSolicitud,
-} from "../services/solicitud.service";
+  actualizarSolicitud
+} from "../services/solicitud.service.js";
 
 const opcionesEstado = [
   { value: "pendiente", label: "Pendiente" },

@@ -1,7 +1,11 @@
 import Card from "./Card";
+import ItemNotificacion from "./itemNotificacion";
 
+export default function PanelNotificaciones({
 
-export default function PanelNotificaciones({ notificaciones }) {
+    notificaciones = []
+
+}) {
 
     return (
 
@@ -11,7 +15,9 @@ export default function PanelNotificaciones({ notificaciones }) {
 
                 <div className="panel-titulo">
 
-                    <h4>
+                    <h4 className="mb-0">
+
+                        <i className="bi bi-bell me-2"></i>
 
                         Notificaciones
 
@@ -20,12 +26,11 @@ export default function PanelNotificaciones({ notificaciones }) {
                 </div>
 
                 {
-
                     notificaciones.length === 0 ? (
 
                         <div className="text-center py-4">
 
-                            <p className="mb-0">
+                            <p className="mb-0 text-muted">
 
                                 No existen notificaciones.
 
@@ -39,22 +44,31 @@ export default function PanelNotificaciones({ notificaciones }) {
 
                             <ItemNotificacion
 
-                                key={notificacion.id}
+                                key={
+                                    `${notificacion.solicitudId}-${notificacion.fecha}`
+                                }
 
-                                solicitudId={notificacion.solicitudId}
+                                solicitudId={
+                                    notificacion.solicitudId
+                                }
 
-                                estado={notificacion.estado}
+                                estado={
+                                    notificacion.estado
+                                }
 
-                                mensaje={notificacion.mensaje}
+                                mensaje={
+                                    notificacion.mensaje
+                                }
 
-                                fecha={notificacion.fecha}
+                                fecha={
+                                    notificacion.fecha
+                                }
 
                             />
 
                         ))
 
                     )
-
                 }
 
             </div>

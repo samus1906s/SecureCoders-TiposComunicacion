@@ -104,7 +104,7 @@ export function conectarSSE(req, res) {
      * Cuando el cliente cierre la conexión,
      * eliminamos los listeners.
      */
-    req.on("close", () => {
+    res.on("close", () => {
 
         eventBus.removeListener(
             "solicitud:creada",

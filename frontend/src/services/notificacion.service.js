@@ -1,4 +1,3 @@
-const URL_BACKEND = "http://localhost:3000";
 
 /*
  * Solicita una notificación mediante Long Polling.
@@ -7,16 +6,23 @@ const URL_BACKEND = "http://localhost:3000";
  * que exista una nueva notificación o finalice
  * el tiempo de espera.
  */
+const URL_BACKEND =
+    "http://localhost:3000/notificaciones";
+
 export async function obtenerNotificacionLongPolling() {
 
     const respuesta = await fetch(
         `${URL_BACKEND}/long-polling`
     );
 
+    if (respuesta.status === 204) {
+        return null;
+    }
+
     if (!respuesta.ok) {
 
         throw new Error(
-            "No se pudo tener por Long Polling."
+            "No fue posible obtener la notificación mediante Long Polling."
         );
 
     }
@@ -25,16 +31,10 @@ export async function obtenerNotificacionLongPolling() {
 
 }
 
-/*
-  eventos enviados
-  desde el servidor mediante SSE.
- */
 export function crearConexionSSE() {
 
-    const fuenteEventos = new EventSource(
+    return new EventSource(
         `${URL_BACKEND}/eventos`
     );
-
-    return fuenteEventos;
 
 }

@@ -131,7 +131,7 @@ export function obtenerLongPolling(req, res) {
      Se ejecuta si el cliente cierra o cancela
      la conexión antes de recibir una respuesta.
      */
-    req.on("close", () => {
+    res.on("close", () => {
 
         if (peticionTerminada) {
             return;
