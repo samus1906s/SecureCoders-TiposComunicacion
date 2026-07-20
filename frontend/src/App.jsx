@@ -5,6 +5,8 @@ import {
 
 import Navbar from "./components/navbar";
 import Notificaciones from "./pages/notificaciones";
+import Dashboard from "./pages/dashboard";
+
 
 export default function App() {
 
@@ -15,6 +17,10 @@ export default function App() {
             <Navbar />
 
             <Routes>
+                <Route
+                    path="/"
+                    element={<Dashboard />}
+                />
 
                 <Route
                     path="/notificaciones"

@@ -8,23 +8,23 @@ export default function Badge({
 
     switch(estado){
 
-        case "Pendiente":
+        case "pendiente":
             color="warning";
         break;
 
-        case "Asignada":
+        case "asignada":
             color="info";
         break;
 
-        case "En proceso":
+        case "en proceso":
             color="primary";
         break;
 
-        case "Finalizada":
+        case "finalizada":
             color="success";
         break;
 
-        case "Cancelada":
+        case "cancelada":
             color="danger";
         break;
 
