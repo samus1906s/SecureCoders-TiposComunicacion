@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px;">
+    <div style="border: 1px solid #e9ecef; padding: 20px; border-radius: 8px;">
+        <h2 style="color: #0d6efd; margin-top: 0;">Tu solicitud está en proceso</h2>
+        <p>Te notificamos que la solicitud <strong>#{{id}}</strong> ha cambiado de estado y nuestro equipo ya está
+            trabajando en ella.</p>
+
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 5px 0;"><strong>Estado Actual:</strong> {{estado}}</p>
+        </div>
+
+        <p>Para revisar notas del técnico o añadir comentarios, presiona el botón:</p>
+        <a href="{{enlaceSolicitud}}" style="background: #0d6efd; color: white; padding: 10px 16px;
+                  text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">
+            Ir al ticket
+        </a>
+
+        <p style="margin-top: 30px; color: #6c757d; font-size: 14px; border-top: 1px solid #e9ecef; padding-top: 15px;">
+            SmartNotify Solutions
+        </p>
+    </div>
+</body>
+
+</html>

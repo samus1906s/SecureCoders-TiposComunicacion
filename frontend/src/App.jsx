@@ -6,7 +6,7 @@ import {
 import Navbar from "./components/navbar";
 import Notificaciones from "./pages/notificaciones";
 import Dashboard from "./pages/dashboard";
-
+import ChatPage from "./pages/chatPage";
 
 export default function App() {
 
@@ -26,6 +26,8 @@ export default function App() {
                     path="/notificaciones"
                     element={<Notificaciones />}
                 />
+
+                <Route path="/chat" element={<ChatPage />} />
 
             </Routes>
 
