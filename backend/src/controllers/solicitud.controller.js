@@ -77,6 +77,13 @@ export async function actualizarSolicitud(req, res) {
       return res.status(404).json({ error: "Solicitud no encontrada para actualizar." });
     }
 
+    // si se manda un correo, debe tener formato válido
+    if (correo) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(correo)) {
+        return res.status(400).json({ error: "El correo electrónico no tiene un formato válido." });
+      }
+    }
     const nuevoEstado = estado || existente[0].estado;
 
     await pool.execute(
