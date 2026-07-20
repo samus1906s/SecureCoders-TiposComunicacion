@@ -1,16 +1,21 @@
-import PanelNotificaciones from "../components/PanelNotificaciones";
-import Loading from "../components/Loading";
-import Alert from "../components/Alert";
+import PanelNotificaciones
+    from "../components/panelNotificaciones.jsx";
 
-import useNotificaciones from "../hooks/useNotificaciones";
+import Loading
+    from "../components/loading.jsx";
 
-export default function Notificaciones() {
+import Alert
+    from "../components/alert.jsx";
 
-    const {
-        notificaciones,
-        cargando,
-        error
-    } = useNotificaciones("long-polling");
+
+export default function Notificaciones({
+
+// Los Dtaos se van a recibir desde el App.jsx
+    notificaciones = [],
+    cargando = false,
+    error = ""
+
+}) {
 
     if (cargando) {
 
@@ -26,6 +31,7 @@ export default function Notificaciones() {
 
     }
 
+
     return (
 
         <main className="contenedor">
@@ -40,11 +46,13 @@ export default function Notificaciones() {
 
                 <p className="text-muted">
 
-                    Consulta los cambios realizados en las solicitudes de soporte.
+                    Consulta los cambios realizados
+                    en las solicitudes de soporte.
 
                 </p>
 
             </div>
+
 
             {
                 error && (
@@ -57,8 +65,13 @@ export default function Notificaciones() {
                 )
             }
 
+
             <PanelNotificaciones
-                notificaciones={notificaciones}
+
+                notificaciones={
+                    notificaciones
+                }
+
             />
 
         </main>

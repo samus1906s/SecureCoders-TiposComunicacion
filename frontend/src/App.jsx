@@ -3,12 +3,23 @@ import {
     Route
 } from "react-router-dom";
 
-import Navbar from "./components/navbar";
-import Notificaciones from "./pages/notificaciones";
-import Dashboard from "./pages/dashboard";
-import ChatPage from "./pages/chatPage";
+import Navbar from "./components/navbar.jsx";
+
+import Notificaciones from "./pages/notificaciones.jsx";
+import Dashboard from "./pages/dashboard.jsx";
+import ChatPage from "./pages/chatPage.jsx";
+
+import useNotificaciones from "./hooks/useNotificaciones.js";
+
 
 export default function App() {
+
+    const {
+        notificaciones,
+        cargando,
+        error
+    } = useNotificaciones("sse");
+
 
     return (
 
@@ -17,6 +28,7 @@ export default function App() {
             <Navbar />
 
             <Routes>
+
                 <Route
                     path="/"
                     element={<Dashboard />}
@@ -24,10 +36,31 @@ export default function App() {
 
                 <Route
                     path="/notificaciones"
-                    element={<Notificaciones />}
+                    element={
+
+                        <Notificaciones
+
+                            notificaciones={
+                                notificaciones
+                            }
+
+                            cargando={
+                                cargando
+                            }
+
+                            error={
+                                error
+                            }
+
+                        />
+
+                    }
                 />
 
-                <Route path="/chat" element={<ChatPage />} />
+                <Route
+                    path="/chat"
+                    element={<ChatPage />}
+                />
 
             </Routes>
 
