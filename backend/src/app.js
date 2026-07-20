@@ -5,6 +5,7 @@ import cors from "cors";
 dotenv.config();
 
 import solicitudRoutes from "./routes/solicitud.routes.js";
+import notificacionesRoutes from "./routes/notificaciones.routes.js";
 import { loggerMiddleware } from "./middlewares/logger.middleware.js";
 
 const NAME = process.env.SERVER_NAME;
@@ -24,6 +25,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/solicitudes", solicitudRoutes);
+
+app.use("/notificaciones",notificacionesRoutes)
 
 app.listen(PORT, () => {
   console.log(`${NAME} ejecutándose en http://localhost:${PORT}`);
