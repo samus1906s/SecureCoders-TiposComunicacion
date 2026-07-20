@@ -7,6 +7,7 @@ import Modal from "../components/modal";
 import Input from "../components/input";
 import Select from "../components/select";
 import Loading from "../components/loading";
+import Alert from "../components/alert";
 
 import {
   obtenerSolicitudes,
@@ -27,10 +28,17 @@ export default function Dashboard() {
   const [cargando, setCargando] = useState(true);
   const [solicitudEditando, setSolicitudEditando] = useState(null);
   const [solicitudAEliminar, setSolicitudAEliminar] = useState(null);
+  const [alerta, setAlerta] = useState(null);
 
   useEffect(() => {
     cargarSolicitudes();
   }, []);
+
+  useEffect(() => {
+    if (!alerta) return;
+    const timer = setTimeout(() => setAlerta(null), 4000);
+    return () => clearTimeout(timer);
+  }, [alerta]);
 
   async function cargarSolicitudes() {
     setCargando(true);
@@ -78,8 +86,14 @@ export default function Dashboard() {
   }
 
   async function guardarEdicion() {
-    await actualizarSolicitud(solicitudEditando.id, solicitudEditando);
+  const respuesta = await actualizarSolicitud(solicitudEditando.id, solicitudEditando);
+    if (respuesta.error) {
+      setAlerta({ tipo: "danger", mensaje: respuesta.error });
+      return;
+    }
+
     cargarSolicitudes();
+    setAlerta({ tipo: "success", mensaje: "Solicitud actualizada correctamente." });
 
     const modalElement = document.getElementById("modalEditar");
     const modalInstance = BsModal.getInstance(modalElement);
@@ -91,6 +105,8 @@ export default function Dashboard() {
   return (
     <div className="container mt-4">
       <h3>Solicitudes</h3>
+
+      {alerta && <Alert tipo={alerta.tipo} mensaje={alerta.mensaje} />}
 
       <Table
         columnas={["ID", "Cliente", "Asunto", "Estado", "Fecha"]}
