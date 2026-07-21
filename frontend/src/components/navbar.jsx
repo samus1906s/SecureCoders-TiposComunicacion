@@ -51,6 +51,12 @@ export default function Navbar() {
 
                         </li>
 
+                       <li className="nav-item">
+                           <NavLink className="nav-link" to="/nueva-solicitud">
+                               Nueva solicitud
+                           </NavLink>
+                       </li>
+                       
                         <li className="nav-item">
 
                             <NavLink

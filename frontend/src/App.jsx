@@ -9,6 +9,7 @@ import Notificaciones from "./pages/notificaciones.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import ChatPage from "./pages/chatPage.jsx";
 import DetalleSolicitud from "./pages/DetalleSolicitud";
+import NuevaSolicitud from "./pages/NuevaSolicitud";
 
 import useNotificaciones from "./hooks/useNotificaciones.js";
 
@@ -67,6 +68,11 @@ export default function App() {
                 <Route
                     path="/solicitud/:id"
                     element={<DetalleSolicitud />}
+                />
+
+                <Route
+                    path="/nueva-solicitud"
+                    element={<NuevaSolicitud />}
                 />
             </Routes>
 

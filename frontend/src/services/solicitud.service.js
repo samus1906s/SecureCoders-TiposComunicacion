@@ -42,3 +42,17 @@ export async function obtenerSolicitudPorId(id) {
   const res = await fetch(`${API_URL}/${id}`);
   return res.json();
 }
+
+/*
+ * Registra una nueva solicitud de soporte
+ * mediante una petición POST al backend.
+ * Usada por el formulario NuevaSolicitud.jsx.
+ */
+export async function agregarSolicitud(data) {
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
