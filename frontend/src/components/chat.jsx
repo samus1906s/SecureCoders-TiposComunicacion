@@ -10,16 +10,23 @@ export default function Chat({ usuario = "Anónimo" }) {
     const [escribiendo, setEscribiendo] = useState(null);
     const socket = obtenerSocket();
     const finRef = useRef(null);
+    const timeoutRef = useRef(null);
 
     useEffect(() => {
-
         socket.on("mensaje", (data) => {
             setMensajes((prev) => [...prev, { ...data, sistema: false }]);
         });
 
         socket.on("typing", (usuarioQueEscribe) => {
-            setEscribiendo(usuarioQueEscribe);
-            setTimeout(() => setEscribiendo(null), 2000);
+            if (usuarioQueEscribe !== usuario) {
+                setEscribiendo(usuarioQueEscribe);
+
+                if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                
+                timeoutRef.current = setTimeout(() => {
+                    setEscribiendo(null);
+                }, 2000);
+            }
         });
 
         socket.on("notificacion", (data) => {
@@ -31,8 +38,9 @@ export default function Chat({ usuario = "Anónimo" }) {
             socket.off("mensaje");
             socket.off("typing");
             socket.off("notificacion");
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
-    }, [socket]);
+    }, [socket, usuario]);
 
     useEffect(() => {
         finRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -84,11 +92,13 @@ export default function Chat({ usuario = "Anónimo" }) {
                     <div ref={finRef} />
                 </div>
 
-                {escribiendo && escribiendo !== usuario && (
-                    <p className="text-muted small fst-italic">
-                        {escribiendo} está escribiendo...
-                    </p>
-                )}
+                <div style={{ minHeight: "24px" }}>
+                    {escribiendo && (
+                        <p className="text-muted small fst-italic mb-2">
+                            ✍️ <strong>{escribiendo}</strong> está escribiendo...
+                        </p>
+                    )}
+                </div>
 
                 <form onSubmit={handleEnviar} className="d-flex align-items-end gap-2">
                     <div className="flex-grow-1">
