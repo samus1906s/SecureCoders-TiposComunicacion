@@ -31,3 +31,14 @@ export async function eliminarSolicitud(id) {
   const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
   return res.json();
 }
+
+
+/*
+ * Obtiene una solicitud específica por su id
+ * mediante una petición GET al backend.
+ * Usada por la pantalla de detalle (polling).
+ */
+export async function obtenerSolicitudPorId(id) {
+  const res = await fetch(`${API_URL}/${id}`);
+  return res.json();
+}

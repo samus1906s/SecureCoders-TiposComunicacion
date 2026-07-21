@@ -8,6 +8,7 @@ import Navbar from "./components/navbar.jsx";
 import Notificaciones from "./pages/notificaciones.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import ChatPage from "./pages/chatPage.jsx";
+import DetalleSolicitud from "./pages/DetalleSolicitud";
 
 import useNotificaciones from "./hooks/useNotificaciones.js";
 
@@ -62,6 +63,11 @@ export default function App() {
                     element={<ChatPage />}
                 />
 
+
+                <Route
+                    path="/solicitud/:id"
+                    element={<DetalleSolicitud />}
+                />
             </Routes>
 
         </>
